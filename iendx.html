@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宋岳庭</title>
+    <style>
+        /* 1. 基础页面样式 */
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+            /* 使用更优雅的字体栈 */
+            background-color: #f5f7fa;
+            /* 更柔和、现代的背景色 */
+            color: #333;
+            /* 深灰色文字，比纯黑更耐看 */
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            /* 提高全站行高，增加可读性 */
+        }
+
+        /* 2. 主容器：使用Flexbox实现整体垂直居中 */
+        .container {
+
+            /* 限制最大宽度，让内容在大屏幕上不会拉伸过长 */
+            margin: 40px auto;
+            /* 上下40px边距，左右自动（实现水平居中） */
+            padding: 40px;
+            background-color: white;
+            border-radius: 16px;
+            /* 更大的圆角，更现代 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            /* 更柔和、有层次的阴影 */
+            /* 以下三行是经典的垂直居中技巧 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 3. 头像图片样式 */
+        .avatar {
+            width: 200px;
+            /* 调整为更合适的头像尺寸 */
+            height: 200px;
+            border-radius: 50%;
+            /* 圆形 */
+            object-fit: cover;
+            /* 保证图片覆盖区域不变形 */
+            border: 5px solid #eaeaea;
+            /* 添加细边框 */
+            margin-bottom: 30px;
+            /* 头像与标题之间的间距 */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            /* 为头像单独添加一点阴影 */
+        }
+
+        /* 4. 标题样式 */
+        h1 {
+            color: #2c3e50;
+            /* 深蓝色标题，更稳重 */
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            /* 灰色副标题 */
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        /* 5. 内容区域样式 */
+        .content {
+            width: 100%;
+            /* 占满容器宽度 */
+        }
+
+        .content h2 {
+            color: #e74c3c;
+            /* 用一个强调色突出小标题 */
+            border-left: 4px solid #e74c3c;
+            /* 左侧色条装饰 */
+            padding-left: 15px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            text-align: justify;
+            /* 两端对齐，让段落更整齐 */
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .content b {
+            color: #2c3e50;
+            /* 加粗字体改用标题色 */
+        }
+
+        /* 6. 底部专辑封面图样式 */
+        .album-cover {
+            max-width: 300px;
+            /* 限制最大宽度 */
+            width: 100%;
+            /* 在小屏幕上自适应 */
+            border-radius: 8px;
+            margin: 40px auto 0;
+            /* 上方留空，水平居中 */
+            display: block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #albumCover {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 8px;
+
+            display: block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            /* 鼠标变成小手，提示可点击 */
+            transition: transform 0.2s;
+            /* 微动效果 */
+        }
+
+        #albumCover:hover {
+            transform: scale(1.02);
+            /* 鼠标悬停时轻微放大 */
+        }
+
+        /* 小提示文字 */
+        .click-hint {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 14px;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .zjfm {
+            display: flex;
+            align-items: flex-start;
+            /* 顶部对齐，避免两张图高度不一 */
+            gap: 200px;
+            /* 左右两张图的间隔 */
+            margin-top: 40px;
+            /* 如果希望整体离上方远一点 */
+
+            width: 100%;
+
+        }
+
+        #sytphoto {
+            max-width: 300px;
+            width: 80%;
+            border-radius: 8px;
+
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 核心布局容器 -->
+    <div class="container">
+        <!-- 头像 -->
+        <img class="avatar" src="songyueting.jpg" alt="宋岳庭头像">
+
+        <!-- 主标题与副标题 -->
+        <h1>宋岳庭</h1>
+        <p class="subtitle">1978.11.6 - 2002.8.9 | 华语嘻哈传奇</p>
+
+        <!-- 内容区域 -->
+        <div class="content">
+            <h2>生平简介</h2>
+            <p><b>宋岳庭</b>（1978年11月6日-2002年8月9日），出生于中国台湾省台北市，华语嘻哈饶舌男歌手。</p>
+            <p>1992年，因患有严重鼻窦炎，为了方便治病，他被母亲送到了美国，开始了留学生涯。</p>
+            <p>1997年，因被朋友栽赃陷害，而被判入狱3个月，缓刑3年。</p>
+            <p>2001年，被确诊为骨癌晚期。2002年8月9日，在母亲李花岗的怀里过世，年仅23岁。</p>
+            <p>2003年8月7日，在其去世一周年前夕，发行了首张个人音乐专辑<b>《Life‘s A Struggle》</b>。</p>
+            <p>2004年，凭借歌曲《Life‘s A Struggle》获得第15届台湾金曲奖最佳作词人奖，并入围最佳新人奖。</p>
+            <p>2005年，其家人将遗作授权给唱片公司，发行了EP专辑《宋岳庭的羽毛》。</p>
+            <p>2013年3月30日，获得第2届中国嘻哈颁奖典礼最佳杰出贡献奖。</p>
+            <input type="button" value="点击查看专辑信息" id="albumCover" class="album-cover">
+        </div>
+        <figure class="zjfm">
+
+            <div><img id="albumCover" src="4a36acaf2edda3cc7cd989a15ab52e01213fb90e34a4.webp" alt="宋岳庭专辑封面">
+                <figcaption>专辑封面《Life's A Struggle》</figcaption>
+            </div>
+            <div><img id="sytphoto" src="v2-f9b361094a12cad98fddb14d72ffc15a_r.jpg" alt="宋岳庭照片">
+                <figcaption>宋岳庭照片</figcaption>
+            </div>
+        </figure>
+
+    </div>
+    </div>
+    <script>
+        // 获取专辑封面元素
+        const cover = document.getElementById('albumCover');
+
+        // 给封面添加点击事件监听器
+        cover.addEventListener('click', function () {
+            alert('🎵 《Life‘s A Struggle》—— 宋岳庭遗作，2003年发行。\n🏆 第15届金曲奖·最佳作词人奖');
+        });
+j'j'k
+        // （可选）控制台输出一句欢迎语，表示JS已生效
+        console.log('✅ 页面已加载，点击专辑封面试试～');
+    </script>
+</body>
+
+</html>
